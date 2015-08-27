@@ -4,6 +4,7 @@
 var express = require('express');
 var app = express();
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
@@ -18,7 +19,7 @@ app.configure(function() {
     app.use(express.bodyParser()); // get information from html forms
     app.set('view engine', 'ejs'); // set up ejs for templating
     // required for passport
-    app.use(express.session({ secret: 'digiware-0p3r4d0r3s' })); // session secret
+    app.use(express.session({ secret: 'muys3cr3t01asd' })); // session secret
     app.use(passport.initialize());
     app.use(passport.session()); // persistent login sessions
     app.use(flash()); // use connect-flash for flash messages stored in session
@@ -26,8 +27,8 @@ app.configure(function() {
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 // launch ======================================================================
-app.listen(port,process.env.OPENSHIFT_NODEJS_IP,function(){
+app.listen(port,ip,function(){
     console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), process.env.OPENSHIFT_NODEJS_IP, port);
+                        Date(Date.now() ), ip, port);
 });
 console.log('The magic happens on port ' + port);
