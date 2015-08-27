@@ -6,7 +6,8 @@
     "OpenShift",
     "Node.js",
     "application",
-    "openshift"
+    "openshift",
+    "passport"
   ],
   "author": {
     "name": "Javier García",
