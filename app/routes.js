@@ -78,9 +78,9 @@ module.exports = function(app, passport) {
 
     // local -----------------------------------
     app.get('/unlink/local', isLoggedIn, function(req, res) {
-        var user            = req.user;
-        user.email    = undefined;
-        user.password = undefined;
+        var user        = req.user;
+        user.email      = undefined;
+        user.password   = undefined;
         user.save(function(err) {
             res.redirect('/profile');
         });
