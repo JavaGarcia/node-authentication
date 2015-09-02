@@ -11,3 +11,10 @@ cd node-authentication
 npm install
 node server.js
 ```
+## OpenShift Quick Deployment
+You can create your application from the command line with this command:
+
+    rhc app create <nameAPP> nodejs-0.10 mongodb-2.4 --env NODE_ENV=production --from-code https://github.com/JavaGarcia/node-authentication.git
+
+
+
