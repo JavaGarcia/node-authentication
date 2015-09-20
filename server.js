@@ -19,11 +19,7 @@ app.configure(function() {
     app.use(express.bodyParser()); // get information from html forms
     app.set('view engine', 'ejs'); // set up ejs for templating
     // required for passport
-<<<<<<< HEAD
-    app.use(express.session({ secret: 'muys3cr3t01asd' })); // session secret
-=======
     app.use(express.session({ secret: 'whattheh3llisth1secret' })); // session secret
->>>>>>> 7298a595811ed2de7096fbe2cc5c1a9d49510c68
     app.use(passport.initialize());
     app.use(passport.session()); // persistent login sessions
     app.use(flash()); // use connect-flash for flash messages stored in session

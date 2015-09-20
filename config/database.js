@@ -4,9 +4,9 @@ var db = {};
         db.Port     = process.env.OPENSHIFT_MONGODB_DB_PORT || 27017;
         db.db       = process.env.OPENSHIFT_APP_NAME || 'octologin';
         db.User     = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'root';
-        db.Pass     = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'root';
+        db.Pass     = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || '';
 
 module.exports = {
 
-    'url' : 'mongodb://'+db.User+':'+db.Pass+'@'+db.Server+':'+db.Port+'/'+db.db 
+    'url' : 'mongodb://'+db.User+':'+db.Pass+'@'+db.Server+':'+db.Port+'/'+db.db
 };
